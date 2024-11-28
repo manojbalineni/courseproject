@@ -53,5 +53,19 @@ public class AccountController {
         }
     }
 
+    @DeleteMapping("/delete")
+    public ResponseEntity<ResponseDto> deleteAccount(@RequestParam String mobileNumber){
+        boolean deleteAccount = accountService.deleteAccount(mobileNumber);
+        if(deleteAccount){
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(new ResponseDto(AccountConstants.STATUS_200,AccountConstants.MESSAGE_200));
+
+        }
+        else {
+            return  ResponseEntity.status(HttpStatus.BAD_REQUEST).
+                    body(new ResponseDto(AccountConstants.DELETE_FAIL_CODE , AccountConstants.DELETE_FAIL_MESSSAGE));
+        }
+    }
+
 
 }

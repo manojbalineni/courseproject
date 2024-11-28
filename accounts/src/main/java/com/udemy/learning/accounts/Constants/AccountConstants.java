@@ -17,5 +17,7 @@ public class AccountConstants {
     public static final String  MESSAGE_417_DELETE= "Delete operation failed. Please try again or contact Dev team";
     public static final String UPDATE_FAIL_CODE = "100";
     public static final String UPDATE_FAIL_MESSSAGE = "Failure on Updating Details";
+    public static final String DELETE_FAIL_CODE = "101";
+    public static final String DELETE_FAIL_MESSSAGE = "Failure on Deleting Details";
 
 }
