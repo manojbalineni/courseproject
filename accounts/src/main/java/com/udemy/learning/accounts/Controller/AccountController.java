@@ -39,5 +39,19 @@ public class AccountController {
 
     }
 
+    @PutMapping("/update")
+    public ResponseEntity<ResponseDto> updateAccount(@RequestBody CustomerDto customerDto){
+        boolean accountUpdate = accountService.updateAccount(customerDto);
+        if(accountUpdate){
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(new ResponseDto(AccountConstants.STATUS_200,AccountConstants.MESSAGE_200));
+
+        }
+        else {
+            return  ResponseEntity.status(HttpStatus.BAD_REQUEST).
+                    body(new ResponseDto(AccountConstants.UPDATE_FAIL_CODE , AccountConstants.UPDATE_FAIL_MESSSAGE));
+        }
+    }
+
 
 }
