@@ -16,9 +16,9 @@
 	<name>cards</name>
 	<description>Microservice for Cards</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
-	<dependencies>
+	 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
