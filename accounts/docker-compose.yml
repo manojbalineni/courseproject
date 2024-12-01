@@ -1,0 +1,40 @@
+services:
+  accounts:
+    image: "manoj938/accounts:1.0"
+    container_name: accounts-ms
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bank
+  loans:
+    image: "manoj938/loans:1.0"
+    container_name: loans_ms
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bank
+
+  cards:
+    image: "manoj938/cards:1.0"
+    container_name: cards_ms
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bank
+
+
+networks:
+  bank:
+    driver: "bridge"
